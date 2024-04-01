@@ -48,3 +48,5 @@
 ## Scalability and Flexibility:
 - Build the application with scalability and flexibility in mind to accommodate future growth and changes in business requirements.
 - Allow for easy customization and extension of features as the business evolves.
+
+
