@@ -1,0 +1,22 @@
+# Ignore Python bytecode files
+__pycache__/
+
+# Ignore macOS directory metadata
+.DS_Store
+
+# Ignore system files created by Windows
+Thumbs.db
+
+# Ignore environment-specific settings
+.env
+
+# Ignore database files
+*.sqlite3
+*.db
+
+# Ignore log files
+*.log
+
+# Ignore compiled Python files
+*.pyc
+*.pyo
