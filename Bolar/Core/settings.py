@@ -18,7 +18,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'pages.apps.PagesConfig',    
+    'Pages.apps.PagesConfig',        
+    'Accounts.apps.AccountsConfig',
 
     # 3e party
     'django_crontab',
@@ -28,6 +29,7 @@ CRONJOBS = [
     ('*/1 * * * *', 'Core.cron.my_scheduled_garbage'),  # Run every 60 seconds
     # Add more cron jobs as needed
 ]
+
 
 
 LOG_DIR = os.path.join(BASE_DIR, 'logs')
@@ -65,6 +67,9 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'Core.urls'
+
+AUTH_USER_MODEL = 'Accounts.User'
+LOGOUT_REDIRECT_URL = 'Accounts:login'
 
 TEMPLATES = [
     {
