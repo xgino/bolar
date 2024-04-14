@@ -8,7 +8,7 @@ from Contact.models import Contact
 from Contact.forms import ContactForm
 
 def home(request):
-    services = Service.objects.all()
+    services = Service.objects.filter(active=True)
     form = ContactForm(request.POST or None)
 
     if request.method == 'POST' and form.is_valid():
