@@ -1,7 +1,11 @@
 from django.contrib import admin
 from .models import Site
+from django.contrib.auth.models import User
+from django.contrib.auth.models import Group
 
-# Register your models here.
+admin.site.unregister(Group)
+admin.site.unregister(User)
+
 @admin.register(Site)
 class SiteAdmin(admin.ModelAdmin):
     list_display = ('name', 'address', 'phone', 'mail')

@@ -49,6 +49,6 @@ class Site(models.Model):
 
         # Resize logo
         if self.logo:
-            resize_image(self.logo, 100, 100)
+            resize_image(self.logo, 200, 200)
 
         super().save(*args, **kwargs)
