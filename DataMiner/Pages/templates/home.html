@@ -26,7 +26,7 @@
                 </div>
                 <div class="item header-text">
                     <h6>Krachtige e-mailcampagne</h6>
-                    <h2>Ontdek onze <em>kracht</em> voor uw <span>e-mailcampagnes</span></h2>
+                    <h2>Ontdek onze <em>kracht</em> voor uw <span>e-mail</span> campagnes</h2>
                     <p>Maximaliseer uw e-mailcampagnes met onze bedrijvenlijst en ontdek grenzeloze mogelijkheden om uw bedrijf uit te breiden</p>
                     <div class="down-buttons">
                         <div class="main-blue-button-hover">
@@ -199,7 +199,7 @@
                         <a rel="sponsored" href="sponsored" target="_parent">
                             <h4>Zorg bedrijf Rotterdam</h4>
                         </a>
-                        <span>CSV van 500 e-mails gekocht &amp; tijd bespaard</span>
+                        <span>Heeft meer dan 40 uur bespaard met ons pakket van 500 e-mails.</span>
                         </div>
                     </div>
                     </div>
@@ -212,7 +212,7 @@
                         <a href="sponsored">
                             <h4>Computer bedrijf Zaandam</h4>
                         </a>
-                        <span>CSV van 200 e-mails gekocht &amp; tijd bespaard</span>
+                        <span>Hun bereik wordt aanzienlijk vergroot met ons pakket van 2.000 e-mails.</span>
                         </div>
                     </div>
                     </div>
@@ -225,7 +225,7 @@
                         <a rel="sponsored" href="" target="_parent">
                             <h4>Groothandel Gorinchem</h4>
                         </a>
-                        <span>CSV van 200 e-mails gekocht &amp; tijd bespaard</span>
+                        <span>Verbeterde gepersonaliseerde campagne met ons pakket van 1.000 e-mails.</span>
                         </div>
                     </div>
                     </div>
@@ -238,7 +238,7 @@
                         <a href="#">
                             <h4>Detacheringsbureau Rijswijk</h4>
                         </a>
-                        <span>CSV van 1000 e-mails gekocht &amp; tijd bespaard</span>
+                        <span>Omzetboost met ons pakket van 5.000 e-mails.</span>
                         </div>
                     </div>
                     </div>
@@ -434,11 +434,11 @@
             <div class="section-heading">
                 <h2>Neem gerust <em>contact</em> met ons op of vraag een <span>Gratis offerte</span> aan</h2>
             <div id="map">
-                <iframe src="https://maps.google.com/maps?q=Moreelsepark%2065,%203511%20EP%20Utrecht&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="360px" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+                <iframe src="https://maps.google.com/maps?q={{Site.street}},%{{Site.zip}}%20{{Site.address}}&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="360px" frameborder="0" style="border:0" allowfullscreen=""></iframe>
             </div>
             <div class="info">
                 {% if Site.phone %}<span><i class="fa fa-phone"></i> <a href="#">Nummer<br>{{Site.phone}}</a></span>{% endif %}
-                {% if Site.mail %}<span><i class="fa fa-envelope"></i> <a href="#">mail<br>{{Site.mail}}</a></span>{% endif %}
+                {% if Site.mail %}<span><i class="fa fa-envelope"></i> <a href="mailto: {{Site.mail}}">mail<br>{{Site.mail}}</a></span>{% endif %}
             </div>
             </div>
         </div>
@@ -459,12 +459,12 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Voornaam" required>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Naam" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Achternaam" required>
+                            <input type="text" class="form-control" id="company" name="company" placeholder="Bedrijf " required>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -489,33 +489,63 @@
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">
-                            <select class="form-control" id="service" name="service" required>
-                                <option value="" disabled selected>Soort Service</option>
-                                {% for service in services %}
-                                    <option value="{{ service.id }}">{{ service.name }}</option>
-                                {% endfor %}
-                            </select>
+                            <div class="input-group">
+                                <select class="form-control" id="service" name="service" required>
+                                    <option value="" disabled selected>Soort Service</option>
+                                    {% for service in services %}
+                                        <option value="{{ service.id }}">{{ service.name }}</option>
+                                    {% endfor %}
+                                </select>
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="height: 38px;"><i class="fa fa-chevron-down"></i></span>
+                                </div>
+                            </div>
+                            <textarea class="form-control mt-3" id="remarks" name="remarks" placeholder="We willen graag een lijst van 500 schoonmaakbedrijven in Utrecht ontvangen." rows="4"></textarea>
                         </div>
-                    </div>
-
-
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <textarea class="form-control" id="remarks" name="remarks" placeholder="We willen graag een lijst van 500 schoonmaakbedrijven in Utrecht ontvangen." rows="4"></textarea>
+                        <!-- Honeypot Field (hidden from users) -->
+                        <div style="display: none;">
+                            <label for="honeypot">Please leave this field empty:</label>
+                            <input type="text" id="honeypot" name="honeypot">
                         </div>
-                    </div>
-
-                    <!-- Honeypot Field (hidden from users) -->
-                    <div style="display: none;">
-                        <label for="honeypot">Please leave this field empty:</label>
-                        <input type="text" id="honeypot" name="honeypot">
-                    </div>
-                   
-                    <div class="col-md-12 text-center">
-                        <button type="submit" class="btn btn-primary btn-lg" id="submit">Submit</button>
+                        <div class="text-center mt-3">
+                            <button type="submit" class="btn btn-primary btn-lg" id="submit">Submit</button>
+                        </div>
                     </div>
                 </div>
             </form>
+
+            <!-- Remember filled form at error -->
+            <script>
+                // Check if there is stored form data and populate the fields
+                window.onload = function() {
+                    var formData = JSON.parse(localStorage.getItem('formData'));
+                    if (formData) {
+                        document.getElementById('name').value = formData.name;
+                        document.getElementById('company').value = formData.company;
+                        document.getElementById('email').value = formData.email;
+                        document.getElementById('phone').value = formData.phone;
+                        document.getElementById('kvk').value = formData.kvk;
+                        document.getElementById('website').value = formData.website;
+                        document.getElementById('service').value = formData.service;
+                        document.getElementById('remarks').value = formData.remarks;
+                    }
+                };
+            
+                // Save form data when the form is submitted successfully
+                document.getElementById('contact').addEventListener('submit', function(event) {
+                    var formData = {
+                        name: document.getElementById('name').value,
+                        company: document.getElementById('company').value,
+                        email: document.getElementById('email').value,
+                        phone: document.getElementById('phone').value,
+                        kvk: document.getElementById('kvk').value,
+                        website: document.getElementById('website').value,
+                        service: document.getElementById('service').value,
+                        remarks: document.getElementById('remarks').value
+                    };
+                    localStorage.setItem('formData', JSON.stringify(formData));
+                });
+            </script>
 
         </div>
         </div>

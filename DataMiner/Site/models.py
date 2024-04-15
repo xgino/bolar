@@ -29,7 +29,6 @@ class Site(models.Model):
     mail = models.CharField(max_length=255, null=True, blank=True)
     favicon = models.ImageField(upload_to='site', default='site/favicon.png', null=True, blank=True)
     logo = models.ImageField(upload_to='site', default='site/logo.png', null=True, blank=True)
-    url = models.URLField(null=True, blank=True)
 
     def __str__(self):
         return self.name

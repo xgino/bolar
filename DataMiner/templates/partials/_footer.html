@@ -5,9 +5,14 @@
         <div class="col-lg-4">
           <div class="about footer-item">
             <div class="logo">
-              <a href="#"><img src="{{Site.logo.url}}" alt="{{Site.logo}}">{{Site.name}}</a>
+              <a href="#"><img src="{{Site.logo.url}}" alt="{{Site.logo}}"></a>
             </div>
-            {% if Site.mail %}<a href="#">{{Site.mail}}</a>{% endif %}
+            <p>
+              {{Site.street}}
+              <br />
+              {{Site.zip}} {{Site.address}}
+            </p>
+            {% if Site.mail %}<a href="mailto: {{Site.mail}}">{{Site.mail}}</a>{% endif %}
             <ul>
               <li><a href="#"><i class="fa fa-facebook"></i></a></li>
               <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -43,7 +48,7 @@
             <p>Copyright &copy; <script>document.write(new Date().getFullYear())</script> {{ Site.name }}. All Rights Reserved. 
             <br>
             Designed by <a rel="nofollow" href="https://templatemo.com">TemplateMo</a>
-            Powered by <a rel="nofollow" href="{{ Site.url }}">{{ Site.name }}</a>
+            Powered by <a rel="nofollow" href="#top">{{ Site.name }}</a>
           </p>
           </div>
         </div>

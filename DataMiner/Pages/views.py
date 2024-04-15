@@ -15,7 +15,7 @@ def home(request):
         # Check if honeypot field is empty (indicating human submission)
         if not request.POST.get('honeypot'):
             form.save()
-            messages.success(request, "Your inquiry has been submitted successfully. We will reply to you within a few working days.")
+            messages.success(request, "Uw aanvraag is succesvol ingediend. We zullen binnen enkele werkdagen op uw bericht reageren.")
             redirect_url = reverse('Pages:home') + '#contact'
             return redirect(redirect_url)
         else:
