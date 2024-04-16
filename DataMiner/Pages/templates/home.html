@@ -1,6 +1,4 @@
-{% extends "base.html" %}{% load static %} {% block title %}Home{% endblock %} {% block content %}
-
-
+{% extends "base.html" %}{% load static %} {% block title %}Lokale Bedrijfs Emaillijsten: Versterk Uw Marketing | {{Site.name}}{% endblock %} {% block content %}
 
 <div class="main-banner" id="top">
     <div class="container">
@@ -19,7 +17,7 @@
                         </div>
                         {% if Site.phone %}
                             <div class="call-button">
-                                <a href="#"><i class="fa fa-phone"></i> {{Site.phone}}</a>
+                                <a href="javascript:void(0);"><i class="fa fa-phone"></i> {{Site.phone}}</a>
                             </div>
                         {% endif %}
                     </div>
@@ -34,7 +32,7 @@
                         </div>
                         {% if Site.phone %}
                             <div class="call-button">
-                                <a href="#"><i class="fa fa-phone"></i> {{Site.phone}}</a>
+                                <a href="javascript:void(0);"><i class="fa fa-phone"></i> {{Site.phone}}</a>
                             </div>
                         {% endif %}
                     </div>
@@ -196,7 +194,7 @@
                     <img src="{% static 'assets/images/portfolio-01.jpg' %}" alt="">
                     <div class="hover-effect">
                         <div class="inner-content">
-                        <a rel="sponsored" href="sponsored" target="_parent">
+                        <a rel="sponsored" href="javascript:void(0);" target="_parent">
                             <h4>Zorg bedrijf Rotterdam</h4>
                         </a>
                         <span>Heeft meer dan 40 uur bespaard met ons pakket van 500 e-mails.</span>
@@ -208,8 +206,8 @@
                     <div class="thumb">
                     <img src="{% static 'assets/images/portfolio-02.jpg' %}" alt="">
                     <div class="hover-effect">
-                        <div class="inner-content">
-                        <a href="sponsored">
+                        <div rel="sponsored" class="inner-content">
+                        <a href="javascript:void(0);">
                             <h4>Computer bedrijf Zaandam</h4>
                         </a>
                         <span>Hun bereik wordt aanzienlijk vergroot met ons pakket van 2.000 e-mails.</span>
@@ -222,7 +220,7 @@
                     <img src="{% static 'assets/images/portfolio-03.jpg' %}" alt="">
                     <div class="hover-effect">
                         <div class="inner-content">
-                        <a rel="sponsored" href="" target="_parent">
+                        <a rel="sponsored" href="javascript:void(0);" target="_parent">
                             <h4>Groothandel Gorinchem</h4>
                         </a>
                         <span>Verbeterde gepersonaliseerde campagne met ons pakket van 1.000 e-mails.</span>
@@ -235,7 +233,7 @@
                     <img src="{% static 'assets/images/portfolio-04.jpg' %}" alt="">
                     <div class="hover-effect">
                         <div class="inner-content">
-                        <a href="#">
+                        <a href="javascript:void(0);">
                             <h4>Detacheringsbureau Rijswijk</h4>
                         </a>
                         <span>Omzetboost met ons pakket van 5.000 e-mails.</span>
@@ -437,7 +435,7 @@
                 <iframe src="https://maps.google.com/maps?q={{Site.street}},%{{Site.zip}}%20{{Site.address}}&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="360px" frameborder="0" style="border:0" allowfullscreen=""></iframe>
             </div>
             <div class="info">
-                {% if Site.phone %}<span><i class="fa fa-phone"></i> <a href="#">Nummer<br>{{Site.phone}}</a></span>{% endif %}
+                {% if Site.phone %}<span><i class="fa fa-phone"></i> <a href="javascript:void(0);">Nummer<br>{{Site.phone}}</a></span>{% endif %}
                 {% if Site.mail %}<span><i class="fa fa-envelope"></i> <a href="mailto: {{Site.mail}}">mail<br>{{Site.mail}}</a></span>{% endif %}
             </div>
             </div>
@@ -464,7 +462,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <input type="text" class="form-control" id="company" name="company" placeholder="Bedrijf " required>
+                            <input type="text" class="form-control" id="company" name="company" placeholder="Bedrijf naam" required>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -530,7 +528,7 @@
                         document.getElementById('remarks').value = formData.remarks;
                     }
                 };
-            
+
                 // Save form data when the form is submitted successfully
                 document.getElementById('contact').addEventListener('submit', function(event) {
                     var formData = {
@@ -544,6 +542,9 @@
                         remarks: document.getElementById('remarks').value
                     };
                     localStorage.setItem('formData', JSON.stringify(formData));
+
+                    // Scroll back to the #contact section after form submission
+                    window.location.hash = '#contact';
                 });
             </script>
 
