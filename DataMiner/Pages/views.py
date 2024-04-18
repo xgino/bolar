@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.urls import reverse
 
@@ -30,4 +30,5 @@ def home(request):
     return render(request, 'home.html', {
         'Site': Site.objects.first(), 
         'form': form, 
-        'services': services})
+        'services': services,
+        })
