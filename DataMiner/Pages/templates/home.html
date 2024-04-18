@@ -501,6 +501,7 @@
                             <input type="text" class="form-control mt-3" id="price" name="price" placeholder="excl. BTW" readonly style="pointer-events: none;">
                             <textarea class="form-control mt-3" id="remarks" name="remarks" placeholder="Bericht" rows="4"></textarea>
                         </div>
+                        <!-- SHOW UPDATED PRICE AFTER SELECT -->
                         <script>
                             function updatePrice() {
                                 var serviceSelect = document.getElementById("service");
@@ -510,9 +511,12 @@
                                 if (selectedServicePrice !== null) {
                                     selectedServicePrice = parseFloat(selectedServicePrice).toFixed(2);
                                     var priceString = selectedServicePrice.replace('.', ',');
-                                    if (priceString.endsWith(',00')) {
+                                    var decimalPart = selectedServicePrice.split('.')[1];
+                        
+                                    if (decimalPart === "00") {
                                         priceString = priceString.replace(',00', ',-');
                                     }
+                        
                                     priceInput.value = "€ " + priceString + " excl. BTW";
                                 } else {
                                     priceInput.value = "";
