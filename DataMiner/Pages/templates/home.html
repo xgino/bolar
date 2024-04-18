@@ -488,23 +488,52 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <div class="input-group">
-                                <select class="form-control" id="service" name="service" required>
+                                <select class="form-control" id="service" name="service" required onchange="updatePrice()">
                                     <option value="" disabled selected>Soort Service</option>
                                     {% for service in services %}
-                                        <option value="{{ service.id }}">{{ service.name }}</option>
+                                        <option value="{{ service.id }}" data-price="{{ service.price }}">{{ service.name }}</option>
                                     {% endfor %}
                                 </select>
                                 <div class="input-group-append">
                                     <span class="input-group-text" style="height: 38px;"><i class="fa fa-chevron-down"></i></span>
                                 </div>
                             </div>
-                            <textarea class="form-control mt-3" id="remarks" name="remarks" placeholder="We willen graag een lijst van 500 schoonmaakbedrijven in Utrecht ontvangen." rows="4"></textarea>
+                            <input type="text" class="form-control mt-3" id="price" name="price" placeholder="excl. BTW" readonly style="pointer-events: none;">
+                            <textarea class="form-control mt-3" id="remarks" name="remarks" placeholder="Bericht" rows="4"></textarea>
                         </div>
+                        <script>
+                            function updatePrice() {
+                                var serviceSelect = document.getElementById("service");
+                                var priceInput = document.getElementById("price");
+                                var selectedServicePrice = serviceSelect.options[serviceSelect.selectedIndex]?.getAttribute("data-price");
+                        
+                                if (selectedServicePrice !== null) {
+                                    selectedServicePrice = parseFloat(selectedServicePrice).toFixed(2);
+                                    var priceString = selectedServicePrice.replace('.', ',');
+                                    if (priceString.endsWith(',00')) {
+                                        priceString = priceString.replace(',00', ',-');
+                                    }
+                                    priceInput.value = "€ " + priceString + " excl. BTW";
+                                } else {
+                                    priceInput.value = "";
+                                }
+                            }
+                        </script>
+
+
                         <!-- Honeypot Field (hidden from users) -->
                         <div style="display: none;">
                             <label for="honeypot">Please leave this field empty:</label>
                             <input type="text" id="honeypot" name="honeypot">
                         </div>
+
+                        <div style="width: 100%; margin: auto;">
+                            <div style="display: flex; ">
+                                <input type="checkbox" id="checkbox2" style="transform: scale(1.0); margin: 5px; width: auto;" required>
+                                <label for="checkbox2" style="margin: auto; font-size: 14px;">Hierbij gaat u akkoord met de <a href="javascript:void(0);">Privacyvoorwaarden</a> van {{Site.name}}.*</label>
+                            </div>
+                        </div>
+                        
                         <div class="text-center mt-3">
                             <button type="submit" class="btn btn-primary btn-lg" id="submit">Submit</button>
                         </div>
