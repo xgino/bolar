@@ -5,6 +5,16 @@ from PIL import Image
 from django.core.files.base import ContentFile
 from io import BytesIO
 
+class Visitor(models.Model):
+    ip_address = models.CharField(max_length=50)
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+class VisitorDash(models.Model):
+    date = models.DateField()
+    day_name = models.CharField(max_length=20)
+    visitor_count = models.IntegerField(default=0)
+
+
 def resize_image(image_field, width, height):
     img = Image.open(image_field)
     img.thumbnail((width, height), Image.ANTIALIAS)
