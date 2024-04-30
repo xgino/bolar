@@ -1,3 +1,4 @@
+from django.utils.translation import ugettext_lazy as _
 from decouple import config
 from pathlib import Path
 import os
@@ -12,6 +13,7 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '*']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
+
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -24,9 +26,8 @@ INSTALLED_APPS = [
     'Contact.apps.ContactConfig',        
 
     # 3e party
+    'easyaudit',
 ]
-
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -37,8 +38,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
-    # Own
-    'Site.middleware.VisitorMiddleware',
+    # 3e party
+    'easyaudit.middleware.easyaudit.EasyAuditMiddleware',
 ]
 
 ROOT_URLCONF = 'Core.urls'

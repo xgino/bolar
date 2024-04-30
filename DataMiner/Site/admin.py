@@ -1,6 +1,5 @@
 from django.contrib import admin
 from .models import Site
-from .models import Visitor, VisitorDash
 
 from django.contrib.auth.models import User
 from django.contrib.auth.models import Group
@@ -21,8 +20,3 @@ class SiteAdmin(admin.ModelAdmin):
     def has_add_permission(self, request):
         return False
 
-
-@admin.register(Visitor)
-class VisitorAdmin(admin.ModelAdmin):
-    list_display = ('ip_address', 'timestamp')
-    date_hierarchy = 'timestamp'
