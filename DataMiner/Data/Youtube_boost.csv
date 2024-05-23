@@ -1,0 +1,11 @@
+name,status,gender,age,city,country,education,occupation,hobby1,hobby2,hobby3,interest1,interest2,interest3,language1,language2,language3,sport1,sport2,sport3
+hendi,true,male,25,London,UK,Bachelor,Engineer,Reading,Coding,Travel,Football,Music,Photography,English,French,Spanish,Football,Tennis,Basketball
+femi,false,female,30,New York,USA,Master,Teacher,Painting,Dancing,Hiking,Art,History,Writing,English,Italian,Chinese,Basketball,Volleyball,Swimming
+john,true,male,35,Paris,France,PhD,Scientist,Cooking,Running,Skiing,Science,Technology,Gardening,French,German,Japanese,Soccer,Running,Cycling
+sara,false,female,28,Tokyo,Japan,Bachelor,Marketing,Shopping,Yoga,Reading,Marketing,Business,Travelling,Japanese,English,Chinese,Swimming,Hiking,Reading
+alex,true,male,40,Berlin,Germany,Master,Manager,Photography,Hiking,Playing Guitar,Photography,Music,Cooking,German,English,French,Tennis,Hiking,Chess
+emma,false,female,22,Sydney,Australia,Bachelor,Student,Drawing,Swimming,Writing,Art,Music,Traveling,English,Spanish,Japanese,Surfing,Diving,Music
+adam,true,male,29,Los Angeles,USA,Master,Designer,Traveling,Photography,Hiking,Design,Photography,Dancing,English,Spanish,Italian,Basketball,Running,Climbing
+lisa,false,female,33,Toronto,Canada,Bachelor,Doctor,Reading,Painting,Traveling,Medicine,Science,Photography,English,French,Chinese,Hiking,Running,Cycling
+mike,true,male,26,Mumbai,India,Bachelor,Developer,Music,Coding,Reading,Technology,Music,Writing,English,Hindi,Tamil,Cricket,Football,Surfing
+jessica,false,female,31,Rio de Janeiro,Brazil,PhD,Researcher,Dancing,Reading,Traveling,Science,Research,Writing,Portuguese,English,French,Volleyball,Soccer,Running

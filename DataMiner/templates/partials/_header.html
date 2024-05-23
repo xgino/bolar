@@ -1,36 +1,50 @@
 {% load static %}
-<!-- ***** Header Area Start ***** -->
-<header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+
+{% url 'Pages:home' as home %}
+{% url 'Pages:marketing' as marketing %}
+{% url 'Pages:other_scrapers' as other_scrapers %}
+{% url 'Pages:about' as about %}
+{% url 'Pages:faq' as faq %}
+{% url 'Pages:contact' as contact %}
+
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark" data-navbar-on-scroll="data-navbar-on-scroll">
     <div class="container">
-    <div class="row">
-        <div class="col-12">
-        <nav class="main-nav">
-            <!-- ***** Logo Start ***** -->
-            <a href="#top" class="logo">
-                <img src="{{ Site.logo.url }}" alt="{{ Site.logo }}">
-            </a>
-            <!-- ***** Logo End ***** -->
-            <!-- ***** Menu Start ***** -->
-            <ul class="nav">
-                <li class="scroll-to-section"><a href="#top" class="active" title="Ga naar de startpagina">Home</a></li>
-                <li class="scroll-to-section"><a href="#services" title="Ontdek onze diensten">Diensten</a></li>
-                <li class="scroll-to-section"><a href="#about" title="Leer meer over ons">Over ons</a></li>
-                <li class="scroll-to-section"><a href="#portfolio" title="Bekijk onze projecten">Projecten</a></li>
-                <li class="scroll-to-section"><a href="#pricing" title="Bekijk onze prijzen">Prijzen</a></li>
-                <li class="scroll-to-section"><a href="#contact" title="Neem contact met ons op">Contact</a></li> 
-                <li class="scroll-to-section">
-                    <div class="main-red-button-hover">
-                        <a href="#contact" title="Vraag een gratis offerte aan">Gratis offerte</a>
-                    </div>
-                </li> 
-            </ul>        
-            <a class='menu-trigger' title="Open menu">
-                <span>Menu</span>
-            </a>
-            <!-- ***** Menu End ***** -->
-        </nav>
-        </div>
+    <a class="navbar-brand" href="{{ home }}">
+        <img src="{{ Site.logo.url }}" alt="{{ Site.logo }}">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="fa-solid fa-bars text-white fs-3"></i></button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+
+            <li class="nav-item">
+                <a class="nav-link {% if request.path == home %}active{% endif %}" aria-current="page" href="{{ home }}">Home</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link {% if request.path == about %}active{% endif %}" aria-current="page" href="{{ about }}">About Us</a>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link {% if request.path == marketing %}active{% endif %}" aria-current="page" href="{{ marketing }}">Marketing</a>
+            </li>
+        
+            <li class="nav-item">
+                <a class="nav-link {% if request.path == other_scrapers %}active{% endif %}" aria-current="page" href="{{ other_scrapers }}">Andere Service</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link {% if request.path == faq %}active{% endif %}" aria-current="page" href="{{ faq }}">Faq</a>
+            </li>
+        
+            <!-- Google Scrapers Amazon Scrapers LinkedIn ScrapersYouTube ScrapersSocial Media Scrapers E-commerce ScrapersGeneral Scrapers -->
+            
+
+
+            <li class="nav-item mt-2 mt-lg-0">
+                <a class="nav-link btn btn-light text-black w-md-25 w-50 w-lg-100" aria-current="page" href="{% url 'Pages:contact' %}">Contact</a>
+            </li>
+        </ul>
     </div>
     </div>
-</header>
-<!-- ***** Header Area End ***** -->
+</nav>

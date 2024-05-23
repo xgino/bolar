@@ -17,86 +17,75 @@
     <meta property="og:locale" content="nl_NL">
     <meta property="og:site_name" content="{{Site.name}}">
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- ===============================================-->
+    <!--    Document Title-->
+    <!-- ===============================================-->
+    <title>Bolar | {% block title %} {% endblock %}</title>
 
-    <title>{% block title %} {% endblock %}</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-
+    <!-- ===============================================-->
+    <!--    Favicons-->
+    <!-- ===============================================-->
     <link rel="shortcut icon" href="{{ Site.favicon.url }}" type="image/x-icon">
 
 
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/templatemo-onix-digital.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/animated.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
-<!--
 
-TemplateMo 565 Onix Digital
+    <!-- ===============================================-->
+    <!--    Stylesheets-->
+    <!-- ===============================================-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link href="{% static 'vendors/prism/prism.css' %}" rel="stylesheet">
+    <link href="{% static 'vendors/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/theme.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/user.min.css' %}" rel="stylesheet" />
 
-https://templatemo.com/tm-565-onix-digital
 
--->
+
+
+    <!-- Google Analytics -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VCKWH95TTC"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-VCKWH95TTC');
+    </script>
+    <!-- End Google Analytics -->
+
+
   </head>
 
 <body>
 
+    <!-- Header -->
+    <main class="main" id="top">
+      {% include 'partials/_header.html' %}
+      
+      {% block content %}  {% endblock %}
+    </main>
 
-  <!-- ***** Preloader Start ***** -->
-  <div id="js-preloader" class="js-preloader">
-    <div class="preloader-inner">
-      <span class="dot"></span>
-      <div class="dots">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </div>
-  <!-- ***** Preloader End ***** -->
-
-
-    <!-- NAVIGATION -->
-    {% include 'partials/_header.html' %}
-
-
-    {% block content %}  {% endblock %}
-
-
+    
     <!-- FOOTER -->
     {% include 'partials/_footer.html' %}
 
 
 
-  <!-- Scripts -->
-  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
-  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-  <script src="{% static 'assets/js/owl-carousel.js' %}"></script>
-  <script src="{% static 'assets/js/animation.js' %}"></script>
-  <script src="{% static 'assets/js/imagesloaded.js' %}"></script>
-  <script src="{% static 'assets/js/custom.js' %}"></script>
 
-  <script>
-  // Acc
-    $(document).on("click", ".naccs .menu div", function() {
-      var numberIndex = $(this).index();
+  <!-- ===============================================-->
+  <!--    JavaScripts-->
+  <!-- ===============================================-->
+  <script src="{% static 'vendors/popper/popper.min.js' %}"></script>
+  <script src="{% static 'vendors/bootstrap/bootstrap.min.js' %}"></script>
+  <script src="{% static 'vendors/anchorjs/anchor.min.js' %}"></script>
+  <script src="{% static 'vendors/is/is.min.js' %}"></script>
+  <script src="{% static 'vendors/fontawesome/all.min.js' %}"></script>
+  <script src="{% static 'vendors/lodash/lodash.min.js' %}"></script>
+  <script src="{% static 'https://polyfill.io/v3/polyfill.min.js?features=window.scroll' %}"></script>
+  <script src="{% static 'vendors/prism/prism.js' %}"></script>
+  <script src="{% static 'vendors/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/js/theme.js' %}"></script>
 
-      if (!$(this).is("active")) {
-          $(".naccs .menu div").removeClass("active");
-          $(".naccs ul li").removeClass("active");
-
-          $(this).addClass("active");
-          $(".naccs ul").find("li:eq(" + numberIndex + ")").addClass("active");
-
-          var listItemHeight = $(".naccs ul")
-            .find("li:eq(" + numberIndex + ")")
-            .innerHeight();
-          $(".naccs ul").height(listItemHeight + "px");
-        }
-    });
-  </script>
 </body>
 </html>

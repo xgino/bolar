@@ -1,0 +1,47 @@
+{% extends "base.html" %}{% load static %} {% block title %}Home{% endblock %} {% block content %}
+
+<!-- ============================================-->
+<!-- <section> begin ============================-->
+    <section class="bg-dark text-center py-7">
+        <div class="container">
+            <div class="col-12 col-md-7 mx-auto">
+            <h1 class="text-white fs-lg-7 fs-md-4 fs-3 my-4">Neem Contact Op</h1>
+            </div>
+            <p class="w-md-50 text-light mx-auto">Contact ons</p>
+        </div><!-- end of .container-->
+    </section><!-- <section> close ============================-->
+    <!-- ============================================-->
+    
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-5">
+            <h2>Our Company</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur odio vitae justo maximus, a aliquam ipsum luctus. Integer mattis fermentum nunc, ac efficitur mauris tempor non.</p>
+            <p>123 Street Name<br>City, Country</p>
+            <p>Email: info@example.com<br>Phone: +123 456 789</p>
+        </div>
+        <div class="col-lg-7">
+            <h2>Contact Us</h2>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+        
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,548 @@
+
+<div id="services" class="our-services section">
+    <div class="services-right-dec">
+        <img src="{% static 'assets/images/services-right-dec.png' %}" alt="">
+    </div>
+    <div class="container">
+        <div class="services-left-dec">
+        <img src="{% static 'assets/images/services-left-dec.png' %}" alt="">
+        </div>
+        <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="section-heading">
+                <h2>Ontdek <em>onze</em> hoogwaardige <span>service &amp; tools</span></h2>
+                <span>Onze Diensten</span>
+            </div>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-lg-12">
+            <div class="owl-carousel owl-services">
+            <div class="item">
+                <h4>Gratis Offerte</h4>
+                <div class="icon"><img src="{% static 'assets/images/service-icon-01.png' %}" alt=""></div>
+                <p>Ontvang een gratis offerte met persoonlijke service en klanttevredenheid</p>
+            </div>
+            <div class="item">
+                <h4>Bespaar tijd  &amp; kosten</h4>
+                <div class="icon"><img src="{% static 'assets/images/service-icon-02.png' %}" alt=""></div>
+                <p>Bespaar tijd en geld met ons efficiënte lokale bedrijfsemaildocument</p>
+            </div>
+            <div class="item">
+                <h4>Omzetboost</h4>
+                <div class="icon"><img src="{% static 'assets/images/service-icon-03.png' %}" alt=""></div>
+                <p>Verhoog uw omzet met ons document vol lokale bedrijfs-e-mailadressen</p>
+            </div>
+            <div class="item">
+                <h4>Betrouwbare data</h4>
+                <div class="icon"><img src="{% static 'assets/images/service-icon-04.png' %}" alt=""></div>
+                <p>Vertrouw op onze nauwkeurige en actuele gegevens voor al uw bedrijfsbehoeften</p>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+<div id="about" class="about-us section">
+<div class="container">
+    <div class="row">
+    <div class="col-lg-6 align-self-center">
+        <div class="left-image">
+        <img src="{% static 'assets/images/about-left-image.png' %}" alt="Two Girls working together">
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="section-heading">
+            <h2>Verbeter uw <em>Bedrijfsgroei</em> met Onze <span>Contactgegevens</span> van Lokale Bedrijven</h2>
+            <p>Kies voor ons om eenvoudig en snel toegang te krijgen tot een breed scala aan contactgegevens van lokale bedrijven. Bespaar kostbare tijd en energie die u anders zou besteden aan het handmatig verzamelen van deze gegevens. Met ons CSV-bestand kunt u direct aan de slag met het benaderen van potentiële klanten en het laten groeien van uw bedrijf.</p>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="fact-item">
+                        <div class="count-area-content">
+                            <div class="icon">
+                                <img src="{% static 'assets/images/service-icon-01.png' %}" alt="">
+                            </div>
+                            <div class="count-digit" data-start="0" data-target="19">0</div>
+                            <div class="count-title">projecten</div>
+                            <p>Onze projecten brengen bedrijven naar succes en groei, ongeacht hun grootte.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="fact-item">
+                        <div class="count-area-content">
+                            <div class="icon">
+                                <img src="{% static 'assets/images/service-icon-02.png' %}" alt="">
+                            </div>
+                            <div class="count-digit" data-start="0" data-target="8">0</div>
+                            <div class="count-title">Bedrijven</div>
+                            <p>Verhoog uw omzet met onze bewezen aanpak en geniet van zakelijk succes.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="fact-item">
+                        <div class="count-area-content">
+                            <div class="icon">
+                                <img src="{% static 'assets/images/service-icon-03.png' %}" alt="">
+                            </div>
+                            <div class="count-digit" data-start="0" data-target="23">0</div>
+                            <div class="count-title">Tevreden Klanten</div>
+                            <p>Sluit u aan bij onze tevreden klanten en laat ons ook uw bedrijf transformeren.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    const countDigits = document.querySelectorAll('.count-digit');
+                    const options = { root: null, rootMargin: '0px', threshold: 0.5 };
+                    const observer = new IntersectionObserver(entries => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                const start = +entry.target.getAttribute('data-start');
+                                const target = +entry.target.getAttribute('data-target');
+                                const duration = 3000; // 3 seconds in milliseconds
+                                const frameCount = Math.abs(target - start);
+                                const interval = duration / frameCount;
+                                let count = start;
+                                const updateCount = () => {
+                                    count++;
+                                    entry.target.textContent = count;
+                                    if (count < target) setTimeout(updateCount, interval);
+                                };
+                                updateCount();
+                            }
+                        });
+                    }, options);
+                    countDigits.forEach(countDigit => { observer.observe(countDigit); });
+                </script>
+
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+</div>
+
+<div id="portfolio" class="our-portfolio section">
+    <div class="portfolio-left-dec">
+        <img src="{% static 'assets/images/portfolio-left-dec.png' %}" alt="">
+    </div>
+    <div class="container">
+        <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="section-heading">
+                <h2>Onze Recente <em>Projecten</em> &amp; Casestudies <span>voor Klanten</span></h2>
+                <p>Ontdek hoe we onze klanten hebben geholpen met onze recent afgeronde projecten en casestudies.</p>
+                <span>Onze Successen</span>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+        <div class="col-lg-12">
+            <div class="owl-carousel owl-portfolio">
+                <div class="item">
+                    <div class="thumb">
+                    <img src="{% static 'assets/images/portfolio-01.jpg' %}" alt="">
+                    <div class="hover-effect">
+                        <div class="inner-content">
+                        <a rel="sponsored" href="javascript:void(0);" target="_parent">
+                            <h4>Zorg bedrijf Rotterdam</h4>
+                        </a>
+                        <span>Heeft meer dan 40 uur bespaard met ons pakket van 500 e-mails.</span>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="thumb">
+                    <img src="{% static 'assets/images/portfolio-02.jpg' %}" alt="">
+                    <div class="hover-effect">
+                        <div rel="sponsored" class="inner-content">
+                        <a href="javascript:void(0);">
+                            <h4>Computer bedrijf Zaandam</h4>
+                        </a>
+                        <span>Hun bereik wordt aanzienlijk vergroot met ons pakket van 2.000 e-mails.</span>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="thumb">
+                    <img src="{% static 'assets/images/portfolio-03.jpg' %}" alt="">
+                    <div class="hover-effect">
+                        <div class="inner-content">
+                        <a rel="sponsored" href="javascript:void(0);" target="_parent">
+                            <h4>Groothandel Gorinchem</h4>
+                        </a>
+                        <span>Verbeterde gepersonaliseerde campagne met ons pakket van 1.000 e-mails.</span>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="thumb">
+                    <img src="{% static 'assets/images/portfolio-04.jpg' %}" alt="">
+                    <div class="hover-effect">
+                        <div class="inner-content">
+                        <a href="javascript:void(0);">
+                            <h4>Detacheringsbureau Rijswijk</h4>
+                        </a>
+                        <span>Omzetboost met ons pakket van 5.000 e-mails.</span>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+<div id="pricing" class="pricing-tables">
+    <div class="tables-left-dec">
+        <img src="{% static 'assets/images/tables-left-dec.png' %}" alt="">
+    </div>
+    <div class="tables-right-dec">
+        <img src="{% static 'assets/images/tables-right-dec.png' %}" alt="">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="section-heading">
+                    <h2>Lokale Bedrijfs-E-mails</h2>
+                    <p>Bespaar tijd en <strong class="main-color">bereik snel nieuwe klanten</strong> met onze handige CSV-bestanden vol contactgegevens van lokale bedrijven. Verhoog uw omzet en <strong class="main-color">laat uw bedrijf groeien</strong> zonder het gedoe van eindeloos zoeken naar contactinformatie.</p>
+                    <span>Bestel vandaag nog uw CSV en geef uw bedrijf een boost!</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            {% for service in services %}
+            <div class="col-lg-4">
+                <div class="item">
+                    <h4>{{ service.name }}</h4>
+                    <em>€{{ service.discounted_price }}</em>
+                    <span>€{{ service.price }}</span>
+
+                    <strong>Ontdek waardevolle leads met ons {{ service.name }} pakket!</strong>
+                    <ul>
+                        <li>Lijst van {{ service.emails }} lokale bedrijven</li>
+                        <li>Totaal aantal Google-recensies</li>
+                        <li>Locaties van de bedrijven</li>
+                        <li>Website-URL's van de bedrijven</li>
+                        <li>Telefoonnummers van de bedrijven</li>
+                        <li>E-mailadressen van de bedrijven</li>
+                    </ul>
+                        
+                    <div class="main-blue-button-hover">
+                        <a href="#contact">Vraag een offerte aan</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- 
+<div id="subscribe" class="subscribe">
+<div class="container">
+<div class="row">
+<div class="col-lg-12">
+<div class="inner-content">
+<div class="row">
+    <div class="col-lg-10 offset-lg-1">
+    <h2>Know Your Website SEO Score by Email</h2>
+    <form id="subscribe" action="" method="get">
+        <input type="text" name="website" id="website" placeholder="Your Website URL" required="">
+        <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email" required="">
+        <button type="submit" id="form-submit" class="main-button ">Subscribe</button>
+    </form>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+ -->
+
+<!-- 
+<div id="video" class="our-videos section">
+    <div class="videos-left-dec">
+    <img src="{% static 'assets/images/videos-left-dec.png' %}" alt="">
+    </div>
+    <div class="videos-right-dec">
+    <img src="{% static 'assets/images/videos-right-dec.png' %}" alt="">
+    </div>
+    <div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+        <div class="naccs">
+            <div class="grid">
+            <div class="row">
+                <div class="col-lg-8">
+                <ul class="nacc">
+                    <li class="active">
+                    <div>
+                        <div class="thumb">
+                        <iframe width="100%" height="auto" src="https://www.youtube.com/embed/JynGuQx4a1Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <div class="overlay-effect">
+                            <a href="#"><h4>Project One</h4></a>
+                            <span>SEO &amp; Marketing</span>
+                        </div>
+                        </div>
+                    </div>
+                    </li>
+                    <li>
+                    <div>
+                        <div class="thumb">
+                        <iframe width="100%" height="auto" src="https://www.youtube.com/embed/RdJBSFpcO4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <div class="overlay-effect">
+                            <a href="#"><h4>Second Project</h4></a>
+                            <span>Advertising &amp; Marketing</span>
+                        </div>
+                        </div>
+                    </div>
+                    </li>
+                    <li>
+                    <div>
+                        <div class="thumb">
+                        <iframe width="100%" height="auto" src="https://www.youtube.com/embed/ZlfAjbQiL78" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <div class="overlay-effect">
+                            <a href="#"><h4>Project Three</h4></a>
+                            <span>Digital &amp; Marketing</span>
+                        </div>
+                        </div>
+                    </div>
+                    </li>
+                    <li>
+                    <div>
+                        <div class="thumb">
+                        <iframe width="100%" height="auto" src="https://www.youtube.com/embed/mx1WseE7-0Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <div class="overlay-effect">
+                            <a href="#"><h4>Fourth Project</h4></a>
+                            <span>SEO &amp; Advertising</span>
+                        </div>
+                        </div>
+                    </div>
+                    </li>
+                </ul>
+                </div>
+                <div class="col-lg-4">
+                <div class="menu">
+                    <div class="active">
+                    <div class="thumb">
+                        <img src="{% static 'assets/images/video-thumb-01.png' %}" alt="">
+                        <div class="inner-content">
+                        <h4>Project One</h4>
+                        <span>SEO &amp; Marketing</span>
+                        </div>
+                    </div>
+                    </div>
+                    <div>
+                    <div class="thumb">
+                        <img src="{% static 'assets/images/video-thumb-02.png' %}" alt="">
+                        <div class="inner-content">
+                        <h4>Second Project</h4>
+                        <span>Advertising &amp; Marketing</span>
+                        </div>
+                    </div>
+                    </div>
+                    <div>
+                    <div class="thumb">
+                        <img src="{% static 'assets/images/video-thumb-03.png' %}" alt="Marketing">
+                        <div class="inner-content">
+                        <h4>Project Three</h4>
+                        <span>Digital &amp; Marketing</span>
+                        </div>
+                    </div>
+                    </div>
+                    <div>
+                    <div class="thumb">
+                        <img src="{% static 'assets/images/video-thumb-04.png' %}" alt="SEO Work">
+                        <div class="inner-content">
+                        <h4>Fourth Project</h4>
+                        <span>SEO &amp; Advertising</span>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>             
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+ -->
+
+<div id="contact" class="contact-us section">
+    <div class="container">
+        <div class="row">
+        <div class="col-lg-7">
+            <div class="section-heading">
+                <h2>Neem gerust <em>contact</em> met ons op of vraag een <span>Gratis offerte</span> aan</h2>
+            <div id="map">
+                <iframe src="https://maps.google.com/maps?q={{Site.street}},%{{Site.zip}}%20{{Site.address}}&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="360px" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+            </div>
+            <div class="info">
+                {% if Site.phone %}<span><i class="fa fa-phone"></i> <a href="javascript:void(0);">Nummer<br>{{Site.phone}}</a></span>{% endif %}
+                {% if Site.mail %}<span><i class="fa fa-envelope"></i> <a href="mailto: {{Site.mail}}">mail<br>{{Site.mail}}</a></span>{% endif %}
+            </div>
+            </div>
+        </div>
+        <div class="col-lg-5 align-self-center">
+            
+            {% if messages %}
+                <ul class="list-unstyled">
+                    {% for message in messages %}
+                        <li class="alert {% if message.tags == 'success' %}alert-success{% else %}alert-danger{% endif %}" role="alert">
+                            {{ message }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+            <form id="contact" action="" method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Naam" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="company" name="company" placeholder="Bedrijf naam" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="info@domein.nl" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="phone" name="phone" placeholder="06 123 456 78" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="kvk" name="kvk" placeholder="KVK (Optioneel)">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="website" name="website" placeholder="www.website.nl" required>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <select class="form-control" id="service" name="service" required onchange="updatePrice()">
+                                    <option value="" disabled selected>Soort Service</option>
+                                    {% for service in services %}
+                                        <option value="{{ service.id }}" data-price="{{ service.price }}">{{ service.name }}</option>
+                                    {% endfor %}
+                                </select>
+                                <div class="input-group-append">
+                                    <span class="input-group-text" style="height: 38px;"><i class="fa fa-chevron-down"></i></span>
+                                </div>
+                            </div>
+                            <input type="text" class="form-control mt-3" id="price" name="price" placeholder="excl. BTW" readonly style="pointer-events: none;">
+                            <textarea class="form-control mt-3" id="remarks" name="remarks" placeholder="Bericht" rows="4"></textarea>
+                        </div>
+                        <!-- SHOW UPDATED PRICE AFTER SELECT -->
+                        <script>
+                            function updatePrice() {
+                                var serviceSelect = document.getElementById("service");
+                                var priceInput = document.getElementById("price");
+                                var selectedServicePrice = serviceSelect.options[serviceSelect.selectedIndex]?.getAttribute("data-price");
+                        
+                                if (selectedServicePrice !== null) {
+                                    selectedServicePrice = parseFloat(selectedServicePrice).toFixed(2);
+                                    var priceString = selectedServicePrice.replace('.', ',');
+                                    var decimalPart = selectedServicePrice.split('.')[1];
+                        
+                                    if (decimalPart === "00") {
+                                        priceString = priceString.replace(',00', ',-');
+                                    }
+                        
+                                    priceInput.value = "€ " + priceString + " excl. BTW";
+                                } else {
+                                    priceInput.value = "";
+                                }
+                            }
+                        </script>
+
+
+                        <!-- Honeypot Field (hidden from users) -->
+                        <div style="display: none;">
+                            <label for="honeypot">Please leave this field empty:</label>
+                            <input type="text" id="honeypot" name="honeypot">
+                        </div>
+
+                        <div style="width: 100%; margin: auto;">
+                            <div style="display: flex; ">
+                                <input type="checkbox" id="checkbox2" style="transform: scale(1.0); margin: 5px; width: auto;" required>
+                                <label for="checkbox2" style="margin: auto; font-size: 14px;">Hierbij gaat u akkoord met de <a href="javascript:void(0);">Privacyvoorwaarden</a> van {{Site.name}}.*</label>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center mt-3">
+                            <button type="submit" class="btn btn-primary btn-lg" id="submit">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <!-- Remember filled form at error -->
+            <script>
+                // Check if there is stored form data and populate the fields
+                window.onload = function() {
+                    var formData = JSON.parse(localStorage.getItem('formData'));
+                    if (formData) {
+                        document.getElementById('name').value = formData.name;
+                        document.getElementById('company').value = formData.company;
+                        document.getElementById('email').value = formData.email;
+                        document.getElementById('phone').value = formData.phone;
+                        document.getElementById('kvk').value = formData.kvk;
+                        document.getElementById('website').value = formData.website;
+                        document.getElementById('service').value = formData.service;
+                        document.getElementById('remarks').value = formData.remarks;
+                    }
+                };
+
+                // Save form data when the form is submitted successfully
+                document.getElementById('contact').addEventListener('submit', function(event) {
+                    var formData = {
+                        name: document.getElementById('name').value,
+                        company: document.getElementById('company').value,
+                        email: document.getElementById('email').value,
+                        phone: document.getElementById('phone').value,
+                        kvk: document.getElementById('kvk').value,
+                        website: document.getElementById('website').value,
+                        service: document.getElementById('service').value,
+                        remarks: document.getElementById('remarks').value
+                    };
+                    localStorage.setItem('formData', JSON.stringify(formData));
+
+                    // Scroll back to the #contact section after form submission
+                    window.location.hash = '#contact';
+                });
+            </script>
+
+        </div>
+        </div>
+    </div>
+    <div class="contact-dec">
+        <img src="{% static 'assets/images/contact-dec.png' %}" alt="">
+    </div>
+    <div class="contact-left-dec">
+        <img src="{% static 'assets/images/contact-left-dec.png' %}" alt="">
+    </div>
+</div>

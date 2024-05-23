@@ -1,0 +1,84 @@
+{% extends "base.html" %}{% load static %} {% block title %}Home{% endblock %} {% block content %}
+
+
+
+<!-- ============================================-->
+<!-- <section> begin ============================-->
+<section class="bg-dark text-center py-7">
+    <div class="container">
+        <div class="col-12 col-md-7 mx-auto">
+        <h1 class="text-white fs-lg-7 fs-md-4 fs-3 my-4">Onze andere Service</h1>
+        </div>
+        <p class="w-md-50 text-light mx-auto">Service dat de marketing kan verbeteren</p>
+    </div><!-- end of .container-->
+</section><!-- <section> close ============================-->
+<!-- ============================================-->
+
+
+
+
+<!-- ============================================-->
+<!-- <section> begin ============================-->
+<section class="py-0">
+    <div class="container">
+        <div class="row mt-5 gx-xl-7">
+
+            <!-- Google Maps Scraper -->
+            <div class="col-lg-4 col-md-6 mb-5 mb-md-0 text-center text-md-start h-auto">
+                <div class="d-flex justify-content-between flex-column h-100">
+                    <a href="{% url 'Pages:Linkedin_student' %}"><img class="w-md-100 w-75 rounded-2" src="{% static 'assets/img/blog/1.png' %}" alt="" /></a>
+                    <div class="d-flex align-items-center justify-content-center justify-content-md-start gap-2 mt-3">
+                        <a href="{% url 'Pages:Linkedin_student' %}">
+                            <p class="fw-bold mb-0 text-black">Lijst van Talentvolle Bijna Afgestudeerde Studenten</p>
+                        </a>
+                        <p class="mb-0">csv</p>
+                    </div>
+                    <a href="{% url 'Pages:Linkedin_student' %}">
+                        <h5 class="mt-1 mb-3 fs-0 fs-md-1">Zet uw personeelswerving in de volgende versnelling met onze uitgebreide lijst van talentvolle bijna afgestudeerde studenten. Benader hen rechtstreeks door berichten te sturen en versterk uw team met het beste talent.</h5>
+                    </a>
+                    <div class="d-flex align-items-center justify-content-center justify-content-md-start gap-3 mb-md-5">
+                        <div class="text-center mb-4">
+                            <a href="{% url 'Pages:Linkedin_student' %}">
+                                <button class="btn btn-outline-dark">Load More</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-6 mb-5 mb-md-0 text-center text-md-start h-auto">
+                <div class="d-flex justify-content-between flex-column h-100">
+                    <a href="{% url 'Pages:YouTube_Boost' %}"><img class="w-md-100 w-75 rounded-2" src="{% static 'assets/img/blog/3.png' %}" alt="" /></a>
+                    <div class="d-flex align-items-center justify-content-center justify-content-md-start gap-2 mt-3">
+                        <a href="{% url 'Pages:YouTube_Boost' %}">
+                            <p class="fw-bold mb-0 text-black">Ontdek de Kracht van YouTube-video Boost</p>
+                        </a>
+                        <p class="mb-0">CSV</p>
+                    </div>
+                    <a href="{% url 'Pages:YouTube_Boost' %}">
+                        <h5 class="mt-1 mb-3 fs-0 fs-md-1">Geef uw YouTube-video een boost met onze gegenereerde weergaven, waardoor deze meer relevantie krijgt en hoger in de zoekresultaten terechtkomt. Hierdoor bereikt u een groter, georganiseerd publiek.</h5>
+                    </a>
+                    <div class="d-flex align-items-center justify-content-center justify-content-md-start gap-3 mb-md-5">
+                        <div class="text-center mb-4">
+                            <a href="{% url 'Pages:YouTube_Boost' %}">
+                                <button class="btn btn-outline-dark">Load More</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- <div class="text-center mb-4"><button class="btn btn-outline-dark">Load More</button></div> -->
+    </div><!-- end of .container-->
+</section><!-- <section> close ============================-->
+<!-- ============================================-->
+
+
+
+
+<!-- Import testimonial section -->
+{% include 'include/_testimonial.html' %}
+
+{% endblock %}

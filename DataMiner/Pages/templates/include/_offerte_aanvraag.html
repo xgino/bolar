@@ -1,0 +1,177 @@
+
+<section class="py-5">
+    <div class="container">
+        <div class="row mt-5 gx-xl-7">
+            <h1 class="text-center fs-lg-7 fs-md-4 fs-3 text-dark mb-5">Offerte aanvragen</h1>
+                <h5 class="text-center fs-lg-2 fs-md-4 fs-3 text-dark mb-5">
+                    Wanneer u ons formulier invult, gaan we direct aan de slag met uw aanvraag. Binnen korte tijd ontvangt u een offerte. Indien gewenst, plannen we een persoonlijk gesprek om uw specifieke eisen verder te bespreken. Op basis daarvan passen we de offerte aan zodat deze volledig aansluit bij uw wensen. Ons doel is om u te ondersteunen en te helpen groeien. U kunt altijd rekenen op onze deskundige hulp en begeleiding.
+                </h5>
+
+                <div class="container full-height d-flex align-items-center justify-content-center">
+                    <div class="col-lg-8 col-md-10 col-sm-12 text-center text-md-start">
+                        <div id="form_status" class="container bg-dark overflow-hidden rounded-2 p-5">
+                            <h1 class="text-center w-lg-95 mx-auto fs-lg-6 fs-md-4 fs-3 text-white">Gratis offerte aanvragen</h1>
+                            <p class="text-white">
+                                <strong style="color: yellow;">Let op:</strong> Deze offerte is niet definitief. We nemen contact met u op om uw wensen en doelen te bespreken, en passen de offerte aan om deze aan uw behoeften te laten voldoen. Uw tevredenheid staat bij ons centraal.
+                            </p>
+            
+                            {% if messages %}
+                                <ul class="list-unstyled">
+                                    {% for message in messages %}
+                                        <p class="alert" style="color: white; background-color: {% if message.tags == 'success' %}green{% else %}red{% endif %};" role="alert">
+                                            {{ message }}
+                                        </p>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+
+                            <form action="" method="post" class="form-no-rounded-corners">
+                                {% csrf_token %}
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control rounded-2" id="name" name="name" placeholder="Naam" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control rounded-2" id="company" name="company" placeholder="Bedrijf naam" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control rounded-2" id="email" name="email" placeholder="E-mail" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control rounded-2" id="phone" name="phone" placeholder="Telefoon" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control rounded-2" id="kvk" name="kvk" placeholder="KVK (Optioneel)">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control rounded-2" id="website" name="website" placeholder="www.website.com" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <select class="form-control rounded-2" id="service" name="service" required onchange="updatePrice()">
+                                                <option value="" disabled selected>Soort Service</option>
+                                                {% for service in services %}
+                                                    <option value="{{ service.id }}" 
+                                                            data-total_price="{{ service.total_price }}"
+                                                            data-discount_ammount="{{ service.discount_amount }}"
+                                                            data-total_after_discount="{{ service.total_after_discount }}">
+                                                        {{ service.name }} | {{ service.quantity }} items
+                                                    </option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <input type="text" class="form-control rounded-2" id="display_price" name="price" placeholder="excl. BTW" readonly style="pointer-events: none;">
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea class="form-control rounded-2" id="remarks" name="remarks" placeholder="Bericht" rows="4"></textarea>
+                                    </div>
+                                    
+                                    <!-- SHOW UPDATED PRICE AFTER SELECT -->
+                                    <script>
+                                        function updatePrice() {
+                                            var serviceSelect = document.getElementById("service");
+                                            var selectedOption = serviceSelect.options[serviceSelect.selectedIndex];
+
+                                            var total_price = parseFloat(selectedOption.getAttribute("data-total_price").replace(',', '.')).toFixed(2);
+                                            var discount_amount = parseFloat(selectedOption.getAttribute("data-discount_ammount").replace(',', '.')).toFixed(2);
+                                            var total_after_discount = parseFloat(selectedOption.getAttribute("data-total_after_discount").replace(',', '.')).toFixed(2);
+
+                                            var displayText;
+                                            function formatNumber(num) {
+                                                let formatted = num.toString().replace('.', ',');
+                                                // Controleer of het eindigt op ,00 en vervang door ,-
+                                                if (formatted.endsWith(',00')) {
+                                                    formatted = formatted.slice(0, -3) + ',-';
+                                                }
+                                                return formatted;
+                                            }
+                                            
+                                            if (discount_amount > 0) {
+                                                displayText = `€ ${formatNumber(total_after_discount)} (excl. btw), inclusief € ${formatNumber(discount_amount)} korting`;
+                                            } else {
+                                                displayText = `€ ${formatNumber(total_after_discount)} (excl. btw)`;
+                                            }
+                                            
+                                            var priceInput = document.getElementById("display_price");
+                                            priceInput.value = displayText;
+                                            priceInput.style.fontWeight = "bold";
+
+                                        }
+                                    </script>
+            
+                                    <!-- Honeypot Field (hidden from users) -->
+                                    <div style="display: none;">
+                                        <label for="honeypot">Please leave this field empty:</label>
+                                        <input type="text" id="honeypot" name="honeypot">
+                                    </div>
+                                    <div class="form-check text-white">
+                                        <p>De ingevulde gegevens worden uitsluitend gebruikt voor het opstellen van een offerte en zullen niet voor andere doeleinden worden gebruikt.</p>
+                                    </div>
+            
+                                    <div class="form-check text-white">
+                                        <input type="checkbox" class="form-check-input" id="checkbox2" required>
+                                        <label class="form-check-label" for="checkbox2">
+                                            Hierbij gaat u akkoord met de <a href="javascript:void(0);">Privacyvoorwaarden</a> van {{Site.name}}.*
+                                        </label>
+                                    </div>
+            
+                                    <div class="text-center mt-3">
+                                        <button type="submit" class="btn btn-success text-dark fs-1" id="submit">Verstuur</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- Remember filled form at error -->
+                            <script>
+                                // Check if there is stored form data and populate the fields
+                                window.onload = function() {
+                                    var formData = JSON.parse(localStorage.getItem('formData'));
+                                    if (formData) {
+                                        document.getElementById('name').value = formData.name;
+                                        document.getElementById('company').value = formData.company;
+                                        document.getElementById('email').value = formData.email;
+                                        document.getElementById('phone').value = formData.phone;
+                                        document.getElementById('kvk').value = formData.kvk;
+                                        document.getElementById('website').value = formData.website;
+                                        document.getElementById('service').value = formData.service;
+                                        document.getElementById('remarks').value = formData.remarks;
+                                    }
+                                };
+            
+                                // Save form data when the form is submitted successfully
+                                document.getElementById('contact').addEventListener('submit', function(event) {
+                                    var formData = {
+                                        name: document.getElementById('name').value,
+                                        company: document.getElementById('company').value,
+                                        email: document.getElementById('email').value,
+                                        phone: document.getElementById('phone').value,
+                                        kvk: document.getElementById('kvk').value,
+                                        website: document.getElementById('website').value,
+                                        service: document.getElementById('service').value,
+                                        remarks: document.getElementById('remarks').value
+                                    };
+                                    localStorage.setItem('formData', JSON.stringify(formData));
+            
+                                    // Scroll back to the #contact section after form submission
+                                    window.location.hash = '#contact';
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div> 
+        </div>
+    </div>
+</section>
