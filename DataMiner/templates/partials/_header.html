@@ -1,9 +1,9 @@
 {% load static %}
 
 {% url 'Pages:home' as home %}
+{% url 'Pages:about' as about %}
 {% url 'Pages:marketing' as marketing %}
 {% url 'Pages:other_scrapers' as other_scrapers %}
-{% url 'Pages:about' as about %}
 {% url 'Pages:faq' as faq %}
 {% url 'Pages:contact' as contact %}
 
@@ -21,7 +21,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link {% if request.path == about %}active{% endif %}" aria-current="page" href="{{ about }}">About Us</a>
+                <a class="nav-link {% if request.path == about %}active{% endif %}" aria-current="page" href="{{ about }}">Over Ons</a>
             </li>
 
 

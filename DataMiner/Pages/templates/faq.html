@@ -1,6 +1,15 @@
 {% extends "base.html" %}{% load static %} {% block title %}Home{% endblock %} {% block content %}
 
-
+<!-- FAQ Section -->
+<section class="bg-dark text-center py-7">
+    <div class="container">
+        <div class="col-12 col-md-7 mx-auto">
+            <h1 class="text-white fs-lg-7 fs-md-4 fs-3 my-4">Veelgestelde vragen</h1>
+        </div>
+        <p class="w-md-50 text-light mx-auto">Antwoorden op uw vragen over onze diensten</p>
+    </div><!-- end of .container-->
+</section><!-- FAQ Section Close -->
+    
 
 
 <!-- ============================================-->
@@ -9,24 +18,95 @@
     <div class="container"><img class="img-fluid" src="{% static 'assets/img/offer/3.png' %}" alt="" />
         <div class="row mt-5 align-items-center">
         <div class="col-md-6">
-            <h2 class="fs-md-4 fs-3 pt-3">We connect our customers with the best, and help them keep up-and stay open.</h2>
+            <h2 class="fs-md-4 fs-3 pt-3">FAQ: Antwoorden op uw meestgestelde vragen</h2>
         </div>
         <div class="col-md-6">
             <div class="accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item"></div>
-            <h2 class="accordion-header border-bottom" id="srgdgfdgdgg45"><button class="accordion-button collapsed text-black" type="button" data-bs-toggle="collapse" data-bs-target="#srgdgfdgdgg45tyuu" aria-expanded="false" aria-controls="srgdgfdgdgg45"><span class="fs-1 pe-3">We connect our customers with the best?</span></button></h2>
+            <h2 class="accordion-header border-bottom" id="srgdgfdgdgg45">
+                <button class="accordion-button collapsed text-black" type="button" data-bs-toggle="collapse" data-bs-target="#srgdgfdgdgg45tyuu" aria-expanded="false" aria-controls="srgdgfdgdgg45">
+                    <span class="fs-1 pe-3">Wat voor soort bestand ontvang ik?</span>
+                </button>
+            </h2>
             <div class="accordion-collapse collapse" aria-labelledby="srgdgfdgdgg45" data-bs-parent="#accordionFlushExample" id="srgdgfdgdgg45tyuu">
                 <div class="accordion-body">
-                <p class="mb-0">Placeholder content for this accordion, which is intended to demonstrate the accordion-flush class. This is the first item's accordion body.</p>
+                <p class="mb-0">Wij leveren CSV-bestanden, wat staat voor "Comma-Separated Values". Dit formaat maakt het gemakkelijk om gegevens te importeren en te gebruiken in verschillende softwaretoepassingen.</p>
                 </div>
             </div>
+
             <div class="accordion-item"></div>
-            <h2 class="accordion-header border-bottom" id="sxvdgrfhfh276"><button class="accordion-button collapsed text-black" type="button" data-bs-toggle="collapse" data-bs-target="#srgdgfdgdgg45tyuu5ghj" aria-expanded="false" aria-controls="sxvdgrfhfh276"><span class="fs-1 pe-3">Android research &amp; development rockstar? </span></button></h2>
+            <h2 class="accordion-header border-bottom" id="sxvdgrfhfh276">
+                <button class="accordion-button collapsed text-black" type="button" data-bs-toggle="collapse" data-bs-target="#srgdgfdgdgg45tyuu5ghj" aria-expanded="false" aria-controls="sxvdgrfhfh276">
+                    <span class="fs-1 pe-3">Hoe betrouwbaar zijn jullie gegevens?</span>
+                </button>
+            </h2>
             <div class="accordion-collapse collapse" aria-labelledby="sxvdgrfhfh276" data-bs-parent="#accordionFlushExample" id="srgdgfdgdgg45tyuu5ghj">
                 <div class="accordion-body">
-                <p class="mb-0">Placeholder content for this accordion, which is intended to demonstrate the accordion-flush class. This is the first item's accordion body.</p>
+                <p class="mb-0">Onze gegevens worden verzameld van betrouwbare bronnen, waaronder Google, en worden regelmatig bijgewerkt om nauwkeurigheid te garanderen.</p>
                 </div>
             </div>
+
+            <div class="accordion-item"></div>
+            <h2 class="accordion-header border-bottom" id="sxvdgrfhfh276">
+                <button class="accordion-button collapsed text-black" type="button" data-bs-toggle="collapse" data-bs-target="#srgdsagfdgg45tyuu5ghj" aria-expanded="false" aria-controls="sxvdgrfhfh276">
+                    <span class="fs-1 pe-3">Zijn de gegevens up-to-date?</span>
+                </button>
+            </h2>
+            <div class="accordion-collapse collapse" aria-labelledby="sxvdgrfhfh276" data-bs-parent="#accordionFlushExample" id="srgdsagfdgg45tyuu5ghj">
+                <div class="accordion-body">
+                <p class="mb-0">Ja, op het moment van uw facturering worden de gegevens verzameld en zijn ze up-to-date. We streven ernaar om de meest recente informatie te leveren op het moment van verzamelen.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item"></div>
+            <h2 class="accordion-header border-bottom" id="sxvdgrfhfh276">
+                <button class="accordion-button collapsed text-black" type="button" data-bs-toggle="collapse" data-bs-target="#srgdsagfdggtyuu5shghj" aria-expanded="false" aria-controls="sxvdgrfhfh276">
+                    <span class="fs-1 pe-3">Kunnen jullie de gegevens aanpassen?</span>
+                </button>
+            </h2>
+            <div class="accordion-collapse collapse" aria-labelledby="sxvdgrfhfh276" data-bs-parent="#accordionFlushExample" id="srgdsagfdggtyuu5shghj">
+                <div class="accordion-body">
+                <p class="mb-0">Zeker, we kunnen het geleverde CSV-bestand aanpassen aan uw behoeften. Of het nu gaat om het filteren van specifieke informatie of het toevoegen van extra gegevens, wij passen het aan volgens uw wensen.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item"></div>
+            <h2 class="accordion-header border-bottom" id="sxvdgrfhfh276">
+                <button class="accordion-button collapsed text-black" type="button" data-bs-toggle="collapse" data-bs-target="#srgdsagg453hutyuu5ghj" aria-expanded="false" aria-controls="sxvdgrfhfh276">
+                    <span class="fs-1 pe-3">Hoe snel kunnen jullie leveren?</span>
+                </button>
+            </h2>
+            <div class="accordion-collapse collapse" aria-labelledby="sxvdgrfhfh276" data-bs-parent="#accordionFlushExample" id="srgdsagg453hutyuu5ghj">
+                <div class="accordion-body">
+                <p class="mb-0">adat u een offerteaanvraag heeft ingediend, nemen we binnen korte tijd contact met u op om uw wensen te bespreken. Zodra de details zijn bevestigd, gaan we direct aan de slag en kunt u binnen 24 uur het aangepaste document verwachten.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item"></div>
+            <h2 class="accordion-header border-bottom" id="sxvdgrfhfh276">
+                <button class="accordion-button collapsed text-black" type="button" data-bs-toggle="collapse" data-bs-target="#srgsaggc432hu5yuu5ghj" aria-expanded="false" aria-controls="sxvdgrfhfh276">
+                    <span class="fs-1 pe-3">Hoe kan ik een bestelling plaatsen?</span>
+                </button>
+            </h2>
+            <div class="accordion-collapse collapse" aria-labelledby="sxvdgrfhfh276" data-bs-parent="#accordionFlushExample" id="srgsaggc432hu5yuu5ghj">
+                <div class="accordion-body">
+                <p class="mb-0">Op dit moment accepteren we geen directe betalingen. U kunt echter een offerteaanvraag indienen en wij zullen contact met u opnemen om de details te bespreken en een factuur op te stellen voor uw bestelling.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item"></div>
+            <h2 class="accordion-header border-bottom" id="sxvdgrfhfh276">
+                <button class="accordion-button collapsed text-black" type="button" data-bs-toggle="collapse" data-bs-target="#ssrgarggh432u5yfu5gsj" aria-expanded="false" aria-controls="sxvdgrfhfh276">
+                    <span class="fs-1 pe-3">Zijn er regels voor het gebruik van de gegevens?</span>
+                </button>
+            </h2>
+            <div class="accordion-collapse collapse" aria-labelledby="sxvdgrfhfh276" data-bs-parent="#accordionFlushExample" id="ssrgarggh432u5yfu5gsj">
+                <div class="accordion-body">
+                <p class="mb-0">Ja, we adviseren om de gegevens te gebruiken volgens de wetten en regels, vooral met betrekking tot privacy en gegevensbescherming. Ook is het belangrijk om de gebruiksvoorwaarden van de bronnen te volgen.</p>
+                </div>
+            </div>
+
+
             </div>
         </div>
         </div>

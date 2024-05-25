@@ -1,41 +1,58 @@
 <section class="pt-0">
   <div class="container">
     <div class="row justify-content-between">
-      <div class="col-lg-6 col-sm-12">
+      <div class="col-lg-4 col-sm-12">
         <a href="#"">
           <img class="img-fluid mt-5 mb-4" src="{{Site.logo.url}}" alt="{{Site.logo}}" />
         </a>
-        <p class="w-lg-75 text-gray">Social media validation business model canvas graphical user interface launch party creative facebook iPad twitter.</p>
+        <p class="w-lg-75 text-gray">{{Site.about }}</p>
+        <ul class="list-unstyled">
+          {% if Site.street %}<li>{{ Site.street }}</li>{% endif %}
+          {% if Site.zip and Site.address %}<li>{{ Site.zip }}, {{ Site.address }}</li>{% endif %}
+        </ul>
+        <ul class="list-unstyled">
+          {% if Site.mail %}<li>E-mail: {{ Site.mail }}</li>{% endif %}
+          {% if Site.phone %}<li>Telefoon: {{ Site.phone }}</li>{% endif %}
+          {% if Site.kvk %}<li>KVK: {{ Site.kvk }}</li>{% endif %}
+        </ul>        
       </div>
       <div class="col-lg-2 col-sm-4">
-        <h3 class="fw-bold fs-1 mt-5 mb-4">Landings</h3>
+        <h3 class="fw-bold fs-1 mt-5 mb-4">Pagina's</h3>
         <ul class="list-unstyled">
-          <li class="my-3 col-md-4"><a href="#">Home</a></li>
-          <li class="my-3"><a href="#">Products</a></li>
-          <li class="my-3"><a href="#">Services</a></li>
+          <li class="my-3 col-md-4"><a href="{% url 'Pages:home' %}">Home</a></li>
+          <li class="my-3"><a href="{% url 'Pages:about' %}">Over Ons</a></li>
+          <li class="my-3"><a href="{% url 'Pages:marketing' %}">Marketing</a></li>
+          <li class="my-3"><a href="{% url 'Pages:other_scrapers' %}">Andere Service</a></li>
+          <li class="my-3"><a href="{% url 'Pages:faq' %}">FAQ</a></li>
+          <li class="my-3"><a href="{% url 'Pages:contact' %}">Contact</a></li>
+
+          <!-- <li class="my-3"><a href="#">Careers</a><span class="py-1 px-2 rounded-2 bg-success fw-bold text-dark ms-2">Hiring!</span></li> -->
         </ul>
       </div>
-      <div class="col-lg-2 col-sm-4">
-        <h3 class="fw-bold fs-1 mt-5 mb-4">Company</h3>
+      <div class="col-lg-3 col-sm-4">
+        <h3 class="fw-bold fs-1 mt-5 mb-4">Services</h3>
         <ul class="list-unstyled">
-          <li class="my-3"><a href="#">Home</a></li>
-          <li class="my-3"><a href="#">Careers</a><span class="py-1 px-2 rounded-2 bg-success fw-bold text-dark ms-2">Hiring!</span></li>
-          <li class="my-3"><a href="#">Services</a></li>
+          <li class="my-3"><a href="{% url 'Pages:gmap_scraper' %}">Bedrijfsinzichten</a></li>
+          <li class="my-3"><a href="{% url 'Pages:gmap_email_scraper' %}">Lokale Bedrijfsemail</a></li>
+          <li class="my-3"><a href="{% url 'Pages:SEO_boost' %}">SEO boost</a></li>
+          <li class="my-3"><a href="{% url 'Pages:Linkedin_student' %}">afgestudeerde studenten</a></li>
+          <li class="my-3"><a href="{% url 'Pages:YouTube_Boost' %}">Youtube Video Boost</a></li>
         </ul>
       </div>
-      <div class="col-lg-2 col-sm-4">
-        <h3 class="fw-bold fs-1 mt-5 mb-4">Resources</h3>
+      <div class="col-lg-3 col-sm-4">
+        <h3 class="fw-bold fs-1 mt-5 mb-4">Informatie</h3>
         <ul class="list-unstyled">
-          <li class="mb-3"><a href="#">Home</a></li>
-          <li class="mb-3"><a href="#">Products</a></li>
-          <li class="mb-3"><a href="#">Services</a></li>
+          <li class="mb-3"><a href="javascript:void(0);">Algemene Voorwaarden</a></li>
+          <li class="mb-3"><a href="javascript:void(0);">Privacy Verklaring</a></li>
+          <li class="mb-3"><a href="javascript:void(0);">Gegevensbescherming</a></li>
+          <li class="mb-3"><a href="javascript:void(0);">Disclaimer</a></li>
+          <li class="mb-3"><a href="javascript:void(0);">Cookiebeleid</a></li>
         </ul>
       </div>
     </div>
     <p>Copyright &copy; <script>document.write(new Date().getFullYear())</script> <a rel="nofollow" href="#top">{{ Site.name }}</a>. All Rights Reserved.
       Powered by <a rel="nofollow" href="#top">{{ Site.name }}</a>
     </p>
-
 
   </div><!-- end of .container-->
 </section>

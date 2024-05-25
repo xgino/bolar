@@ -16,12 +16,12 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-5">
-            <h2>Our Company</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur odio vitae justo maximus, a aliquam ipsum luctus. Integer mattis fermentum nunc, ac efficitur mauris tempor non.</p>
-            <p>123 Street Name<br>City, Country</p>
-            <p>Email: info@example.com<br>Phone: +123 456 789</p>
+            <h2>Contact Ons</h2>
+            <p>Heeft u vragen of opmerkingen? Neem gerust contact met ons op via onderstaande gegevens:</p>
+            <p>{% if Site.street %}Adres: {{ Site.street }}<br>{% endif %}{% if Site.zip and Site.address %}{{ Site.zip }}, {{ Site.address }}{% endif %}</p>
+            <p>{% if Site.mail %}Email: info@example.com<br>{% endif %}{% if Site.phone %}Telefoon: {{ Site.phone }}{% endif %}</p>
         </div>
-        <div class="col-lg-7">
+        <!-- <div class="col-lg-7">
             <h2>Contact Us</h2>
             <form action="#" method="POST">
                 <div class="form-group">
@@ -38,7 +38,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary">Send Message</button>
             </form>
-        </div>
+        </div> -->
         
     </div>
 </div>
