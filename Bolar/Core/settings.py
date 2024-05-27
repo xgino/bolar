@@ -23,6 +23,7 @@ INSTALLED_APPS = [
 
     # 3e party
     'django_crontab',
+    'import_export',
 ]
 
 CRONJOBS = [
