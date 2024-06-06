@@ -28,8 +28,8 @@ class Site(models.Model):
     kvk = models.CharField(max_length=255, null=True, blank=True)
     phone = models.CharField(max_length=255, null=True, blank=True)
     mail = models.CharField(max_length=255, null=True, blank=True)
-    favicon = models.ImageField(upload_to='site', default='site/favicon.png', null=True, blank=True)
-    logo = models.ImageField(upload_to='site', default='site/logo.png', null=True, blank=True)
+    favicon = models.ImageField(upload_to='site/favicon', default='site/favicon.png', null=True, blank=True)
+    logo = models.ImageField(upload_to='site/logo', default='site/logo.png', null=True, blank=True)
 
     def __str__(self):
         return self.name
